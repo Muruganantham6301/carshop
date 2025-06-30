@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Shop</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    h1 { color: #333; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 0.5rem 0; border-bottom: 1px solid #ddd; }
+    .car-name { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Car Shop 🚗</h1>
+  <ul id="car-list">
+    <!-- Cars will be injected here -->
+  </ul>
+
+  <script>
+    const cars = [
+      { name: 'Ford Mustang', year: 2022, price: '$30,000' },
+      { name: 'Tesla Model 3', year: 2023, price: '$40,000' },
+      { name: 'Toyota Corolla', year: 2021, price: '$20,000' }
+    ];
+
+    const ul = document.getElementById('car-list');
+    cars.forEach(car => {
+      const li = document.createElement('li');
+      li.innerHTML = \`
+        <span class="car-name">\${car.name}</span>
+        — \${car.year}, \${car.price}
+      \`;
+      ul.appendChild(li);
+    });
+  </script>
+</body>
+</html>
